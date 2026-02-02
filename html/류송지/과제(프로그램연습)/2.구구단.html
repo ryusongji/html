@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        #result {
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <form name="gugudan">
+        <label for>단 입력 : <input type="text" id="dan"></label>
+        <button type="button" id="btn">출력</button>
+    </form>
+    <div id="result">
+       
+    </div>
+    
+    <script>
+        // 출력 버튼이 클릭되면 입력된 단만 출력
+        let resultBtn = document.querySelector('#btn');
+
+        let layout = ` `;
+        resultBtn.onclick = resultFunc;
+        function resultFunc() {
+            let dan1 = document.querySelector('#dan').value;
+            console.log(dan1)
+            layout += `<h3>${Number(dan1)}단</h3>`
+            for(let i = 1; i<11;i++) {
+                layout += `${dan1} X ${i} = ${Number(dan1) * i}<br>`;
+            }
+            //document.write(layout);
+            let result = document.querySelector('#result');
+            result.innerHTML = layout;
+        }
+    </script>
+</body>
+</html>

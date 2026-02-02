@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성적표</title>
+  <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    tr,td,th {
+      border: 1px solid black;
+    }
+    th {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>성적표</h1>
+  <script>
+  let layout = `<table>
+    <tr>
+      <th>이름</th>
+      <th>성적</th>
+      <th>평균</th>
+      <th>등급</th>
+      <th>등수</th>
+    </tr>`
+
+    // 성적표 만들기
+    // 학생 hong, sung, lee 객체만들기
+    // 학생의 속성, 이름 , 국어점수, 영어점수, 수학점수
+    // 메소드 : 총점, 평균, 구하는 메소드
+
+    // 학생 개체 생성자 함수
+    //let i = 0;
+    
+    function Student(name,kor,eng,math,java,rank) {
+      this.name = name,
+      this.kor = kor,
+      this.eng = eng,
+      this.math = math,
+      this.java = java,
+      this.rank = rank
+    }
+    //Student.java = java;
+    //생성자 함수의 공통 공간에 생성 -> 모든 인스턴스(객체)가 사용하도록 함(메모리 공간을 효율적으로 사용 가능)
+    Student.prototype.getsum = function(){
+      return this.kor + this.eng + this.math + this.java ;
+    }
+    Student.prototype.getavg = function(){
+     return parseInt(this.getsum()/4);
+    }
+    Student.prototype.getgrade = function(){
+      switch(parseInt(this.getavg()/10)) {
+        case 10 :
+        case 9 : return 'A'; break;
+        case 8 : return 'B'; break;
+        case 7 : return 'C'; break;
+        case 6 : return 'D'; break;
+        default : return 'F';
+      }
+    }
+
+    // 배열에 학생 개체 저장
+    let students = [
+      new Student('홍길동', 100,60,80,90),
+      new Student('성춘향', 88,90,100,60),
+      new Student('이몽룡', 60,70,88,70),
+      new Student('가나다', 99,80,88,100),
+      new Student('마바사', 99,0,0,0),
+      new Student('바사', 99,78,0,61),
+      new Student('마사', 45,75,35,89),
+      new Student('마바', 79,50,30,10)
+    ];
+    
+    
+    for(let i = 0;i< students.length;i++) {
+      function rank1(count = 1){
+        for(j = 0; j<students.length; j++){
+          if (students[i].getsum() < students[j].getsum()) {
+            count++
+          }
+          
+        }return students[i].rank =count;
+        }
+      console.log(rank1());
+      
+      //document.write(`<p>${students[i].name} : ${students[i].getsum()} : ${students[i].getavg()}</p>`);
+      layout += 
+      `<tr>
+        <td>${students[i].name}</td>
+        <td>${students[i].getsum()}</td>
+        <td>${students[i].getavg()}</td>
+        <td>${students[i].getgrade()}</td>
+        <td>${students[i].rank}</td>
+      </tr>`
+    }
+
+    //문서에 표 작성
+    layout += `</table>`;
+    document.write(layout);
+
+    //과목 추가 : java
+    //등급 추가 : A,B,C,B,F
+    //학생 데이터 : 5명
+    //CSS 작성 표 디자인
+    //CSS 작성 표 디자인
+    
+    // let sung = {
+    //   name  : '성춘향',
+    //   kor : 88,
+    //   eng : 90,
+    //   math : 100,
+    //   getsum : function() {
+    //     return this.kor + this.eng + this.math;
+    //   },
+    //   getavg : function() {
+    //     return parseInt(this.getsum()/3);
+    //   }
+    // }
+
+  </script>
+</body>
+</html>

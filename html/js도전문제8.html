@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>별찍기</title>
+</head>
+<body>
+  <h1>별찍기</h1>
+  <script>
+    
+    for(let i = 1; i<=19; i++){
+    let stars = "";
+    let br = "";
+    let blank = "";  
+      if(i %2 != 0 && i <= 7){
+        for(let j = 1; j<=i; j++){
+          stars +='*';
+        }
+        for(let a = 5; a>=i; a--){
+          blank +='&nbsp';
+        }
+        br = '<hr>';
+      } else if(i %2 != 0 && i >= 7){
+        for(let j = 8; j>=i-5; j--){
+          stars +='*';
+        }
+        for(let a = 1; a<=i-7; a++){
+          blank +='&nbsp';
+        }
+        br = '<hr>';
+      }
+      document.write(`${blank}${stars}${br}`)
+    }
+  </script>
+</body>
+</html>

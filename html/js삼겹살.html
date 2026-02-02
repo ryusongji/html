@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼겹살 가격 측정</title>
+  <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    tr,td,th {
+      border: 1px solid black;
+    }
+    th {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>삼겹살 가격측정</h1>
+  <script>
+    let layout = `<table>
+      <tr>
+        <th>키</th>
+        <th>값</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td>이름</td>
+        <td>삼겹살</td>
+      </tr>
+      <tr>
+        <td>무게</td>
+        <td>100g</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>1690원</td>
+      </tr>`
+    function Product(name, gram) {
+      this.name = name,
+      this.gram = gram
+    }
+    Product.prototype.getprice = function(){
+      return parseInt(this.gram * 16.9);
+    }
+
+    let product = [
+      new Product('삼겹살',500),
+      new Product('삼겹살',100),
+      new Product('삼겹살',200),
+      new Product('삼겹살',300)
+    ]
+
+    console.log(product);
+    layout += `<tr>
+      <th>메소드</th>
+      <th>기능</th>
+      </tr>`
+    for(let i= 0; i<product.length; i++) {
+      layout += 
+      `<tr>
+        <td>calcuate</td>  
+        <td>${product[i].gram}g 구매시 가격은?</td>  
+        <td>${product[i].getprice()}원</td>  
+      </tr>`
+    }
+    layout += `</table>`;
+    document.write(layout);
+
+  </script>
+</body>
+</html>

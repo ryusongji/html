@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+  <style>
+    /* #hide {
+      display: none;
+    } */
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>문서 객체 모델(DOM)</h1>
+  <div class="show">
+    <h3>보이는 택스트</h3>
+    <p id="hide">숨기는 택스트</p>
+  </div>
+  <ul>
+    <li class="list">클래스1</li>
+    <li class="list">클래스2</li>
+    <li class="list">클래스3</li>
+    <li class="list">클래스4</li>
+  </ul>
+  <img id="imgsrc" src="img/레드향.jpg" alt="레드향">
+  <script>
+    //문서 객체 다루기
+    //문서 객체 가져오기
+    let id = document.querySelector('#hide');
+    console.log(id);
+    id.innerText = '<a href="index.html">내용수정됨<a>';
+    let list = document.querySelectorAll('.list');
+    console.log(list);
+
+    let list1 = document.querySelector('.list');
+    console.log(list1);
+
+    let content1 = document.querySelector('.show').innerHTML;
+    let content2 = document.querySelector('.show').innerText;
+    let content3 = document.querySelector('.show').textContent;
+    console.log(content1);
+    console.log(content2);
+    console.log(content3);
+
+    // 이미지 변경
+    let imgsrc = document.querySelector('#imgsrc');
+    // imgsrc.src = 'img/봄.jpg';
+    imgsrc.setAttribute('src','img/봄.jpg');
+    imgsrc.style.borderRadius='50%';
+    // imgsrc.remove();
+    imgsrc.addEventListener('mouseover',function(){
+      imgsrc.setAttribute('src','img/레드향.jpg')
+    });
+    imgsrc.addEventListener('mouseout',function(){
+      imgsrc.setAttribute('src','img/봄.jpg')
+    });
+
+    //이벤트 전파
+    let p =  document.querySelector('.show');
+    p.addEventListener('click', function(){
+      alert('부모 이벤트 실행');
+    }, false)
+
+    id.addEventListener('click',function(){
+      alert('자식 이벤트 실행');
+      event.stopPropagation();
+    }, true)
+  </script>
+</body>
+</html>

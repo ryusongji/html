@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드생성</title>
+  <style>
+    .accent {
+      background-color: beige;
+    }
+    #result {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>노드생성</h1>
+  <div id="result"></div>
+  <script>
+    //<p class='accent'>주문완료<p>
+    //태그생성
+    let result = document.querySelector('#result')
+    
+    for(let i = 1; i<=5; i++){
+
+      let nodep = document.createElement('p');
+      let textnode = document.createTextNode('주문완료');
+      nodep.appendChild(textnode);
+      nodep.setAttribute('class', 'accent');
+      result.appendChild(nodep);
+    }
+  </script>
+</body>
+</html>

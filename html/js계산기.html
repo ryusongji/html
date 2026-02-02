@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+</head>
+<body>
+  <h1>계산기</h1>
+  <form>
+    <ul>
+      <li>
+        <label for="num1">수1</label>
+        <input type="text" name="num1" id="num1">
+      </li>
+      <li>
+        <label for="num2">수2</label>
+        <input type="text" name="num2" id="num2">
+      </li>
+      <hr>
+      <li>
+        <label for="result">결과</label>
+        <input type="text" name="result" id="result">
+      </li>
+      <br>
+      <button type="button" id="plus">더하기</button>
+      <button type="button" id="minus">뺴기</button>
+      <button type="button" id="gop">곱하기</button>
+      <button type="button" id="nanu">나누기</button>
+      <button type="reset">초기화</button>
+    </ul>
+  </form>
+  <script>
+    //문서객체 가져오기
+    let plusBtn = document.querySelector('#plus');
+    let minusBtn = document.querySelector('#minus');
+    let gopBtn = document.querySelector('#gop');
+    let nanuBtn = document.querySelector('#nanu');
+    let su1 = document.querySelector('#num1');
+    let su2 = document.querySelector('#num2');
+    let result = document.querySelector('#result');
+    
+    //이벤트 처리
+    plusBtn.onclick = plusFunc;
+    minusBtn.onclick = minusFunc;
+    gopBtn.onclick = gopFunc;
+    nanuBtn.onclick = nanuFunc;
+    
+
+    //함수
+    function plusFunc(){
+      //입력된 수 값 가져오기
+      let p_result = Number(su1.value) + Number(su2.value);
+      result.value = p_result;
+    }
+    function minusFunc(){
+      //입력된 수 값 가져오기
+      let p_result = Number(su1.value) - Number(su2.value);
+      result.value = p_result;
+    }function gopFunc(){
+      //입력된 수 값 가져오기
+      let p_result = Number(su1.value) * Number(su2.value);
+      result.value = p_result;
+    }function nanuFunc(){
+      //입력된 수 값 가져오기
+      let p_result = Number(su1.value) / Number(su2.value);
+      result.value = p_result;
+    }
+  </script>
+</body>
+</html>

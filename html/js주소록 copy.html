@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주소록</title>
+  <style>
+    form {
+      width: 500px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    ul {
+
+      display: inline-block;
+      padding: 0;
+    }
+    li {
+      border-radius: 5px;
+      list-style: none;
+      padding: 5px;
+      margin: 5px;
+    }
+    label {
+      width: 130px;
+      display: inline-block;
+      text-align: center;
+    }
+    input {
+      width: 250px;
+      padding: 3px;
+    }
+    
+    table {
+      display: none;
+      margin: 0 auto;
+      width: 300px;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    tr,th,td {
+      border: 1px solid black;
+
+    }
+    th {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>주소록</h1>
+  <form>
+    <ul>
+      <li>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label for="tel">연락처</label>
+        <input type="tel" id="tel" name="tel" required>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label for="address">주소</label>
+        <input type="text" id="address" name="address" required>
+      </li>
+    </ul>
+    <button type="button" id="add">주소록</button>
+    <hr>
+  </form>
+  <table id="address1">
+    <tr>
+      <th>순번</th>
+      <th>이름</th>
+      <th>연락처</th>
+      <th>주소</th>
+    </tr>
+  </table>
+  <script>
+    //form에서 이름, 연락처, 주소 => 입력
+    // 주소록 버튼이 클릭되면 => 입력된 자료 => 베열에 저장 => 표로 작성(문서)
+    // 출력 위치는 폼 아래
+    let name_u = document.querySelector('#name')
+    let tel_u = document.querySelector('#tel')
+    let address_u = document.querySelector('#address')
+    let addBtn = document.querySelector('#add')
+    let address1 = document.querySelector('#address1')
+
+    let count = 0;
+    addBtn.addEventListener('click', showFunc)
+
+
+    function showFunc() {
+      count++;
+      console.log(count)
+      address1.style.display = "block";
+        let node_tr1 = document.createElement('tr');
+        let node_td = document.createElement('td');
+        let node_su = document.createTextNode(count);
+        let node_td1 = document.createElement('td');
+        let node_name = document.createTextNode(name_u.value);
+        let node_td2 = document.createElement('td');
+        let node_tel = document.createTextNode(tel_u.value);
+        let node_td3 = document.createElement('td');
+        let node_address = document.createTextNode(address_u.value);
+        address1.appendChild(node_tr1);
+        node_tr1.appendChild(node_td);
+        node_tr1.appendChild(node_td1);
+        node_tr1.appendChild(node_td2);
+        node_tr1.appendChild(node_td3);
+        node_td.appendChild(node_su);
+        node_td1.appendChild(node_name);
+        node_td2.appendChild(node_tel);
+        node_td3.appendChild(node_address);        
+
+    }
+  </script>
+</body>
+</html>

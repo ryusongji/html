@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        // 배열에 1에서 100사이의 무작위 수 10개를 입력
+        // 배열의 합 계산
+        // 최대값과 최소값 구하기 
+        // 콘솔창에 결과 출력력
+        let randoms = []
+        while(randoms.length<10){
+            let random = Math.floor(Math.random()*100)+1
+            randoms.push(random);
+        }
+        console.log(randoms);
+        let max = randoms[0];
+        let min = randoms[0];
+        let sum = 0;
+        for(let i = 0; i < randoms.length; i++) {
+            sum += randoms[i];
+            if(randoms[i]>max) {
+                max = randoms[i]
+            }
+            if(randoms[i]<min) {
+                min = randoms[i]
+            }
+        }
+        // let randomsum = randoms.reduce((pre,curr)=>pre + curr)
+        // randoms.sort((a,b)=>a-b);
+        // let max = randoms[9];
+        // let min = randoms[0];
+
+        console.log(`배열의 합 = ${sum}, 최소값 = ${min}, 최댓값 = ${max}`)
+
+
+    </script>
+
+    
+</body>
+</html>

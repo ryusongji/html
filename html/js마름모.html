@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>별찍기</title>
+</head>
+<body>
+  <h1>별찍기</h1>
+  <script>
+    let n = prompt('숫자를 입력하세요');
+    for(let i = 1; i<=n; i=i+2){
+    let stars = "";
+    let br = "";
+    let blank = "";  
+      if(i <= n/2){
+        for(let j = 1; j<=i; j++){
+          stars +='*';
+        }
+        for(let a = (n/2)-1; a>=i; a=a-2){
+          blank +=' ';
+        }
+      } else if(i >= n/2){
+        for(let j = n/2-1; j>=i-(n/2); j--){
+          stars +='*';
+        }
+        for(let a = 1; a<=i-n/2; a=a+2){
+          blank +=' ';
+        }
+        //br = '<hr>';
+      }
+      console.log(`${blank}${stars}`)
+    }
+  </script>
+</body>
+</html>

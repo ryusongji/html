@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js 조건문</title>
+</head>
+<body>
+  <h1>js 조건문</h1>
+  <script>
+    //조건문 : 조건에 만족하는 경우, 만족하지 않는 경우에 따라 명령을 다르게 처리하는 명령어
+    // let num = 0;
+    // if ( num > 0 ) {
+    //   console.log(`${num}은 양수입니다`)
+    // } else if (num==0) {
+    //   console.log(`${num}은 Zero입니다`)
+
+    // }else {
+    //   console.log(`${num}은 음수입니다`)
+    // }
+    // console.log('종료')
+    //num이 홀수면 홀수라고 출력
+    //num이 짝수면 짝수라고 출력
+    let num = 3;
+    if ( num % 2 == 0 ) {
+      console.log(`${num}은 짝수입니다`)
+    } else if (num % 2 != 0) {
+      console.log(`${num}은 홀수입니다`)
+
+    }else {
+      console.log(`${num}은 수입니다`)
+    }
+    console.log('종료')
+
+
+    //90 이상이면 장학생, 90이하 80초과면 우수생
+    let score = 90;
+    // if (score >= 90) {
+    //   console.log(`${score} 장학생입니다`)
+    // } else if (score >= 80) {
+    //   console.log(`${score} 우수생입니다`)
+    // } else {
+    //   console.log('보통입니다')
+    // }
+
+    //성적평가 90이상 A 80이상 B 70이상 C 60이상 D 나머지 F
+    if (score >= 90) {
+      console.log('A')
+    }else if (score >= 80) {
+      console.log('B')
+    } else if (score >= 70) {
+      console.log('C')
+    } else if (score >= 60) {
+      console.log('D')
+    } else {
+      console.log('F')
+    };
+
+    //국어점수, 영어점수, 수학점수
+    //총점, 평균
+    let kor = 90;
+    let english = 90;
+    let math = 10;
+    let total = parseInt((kor + math + english) / 3);
+    
+    if (kor >= 90 && total >= 80) {
+      console.log(`${kor}>=90, ${total}>=80 =>장학생`);
+    } else {
+      console.log(`${total} 탈락`);
+    };
+    console.log(`성적처리 완료`);
+
+    //삼항 연산자 : 항이 3개
+    //(조건) ? true : false
+    num =20;
+    num%2 ==0? alert('짝수') : alert("홀수");
+
+    //switch : 조건이 여러개인 경우 값에 따라 처리하도록 하는 명령
+    switch(num % 2){
+      case 0 :
+        console.log("짝수");
+        break;
+      case 1 :
+        console.log("홀수");
+        break;
+      default :
+        console.log("숫자가 아니야");
+        break;
+    }
+
+    //학점
+    score =100;
+    let result = parseInt(score/10);
+    let grade = '';
+    switch (result) {
+      case 10 :
+      case 9 : grade = 'A'; break;
+      case 8 : grade = 'B'; break;
+      case 7 : grade = 'C'; break;
+      case 6 : grade = 'D'; break;
+      default: grade = 'F';
+    
+    }
+    console.log(` ${score} : ${grade}`);
+
+  </script>
+</body>
+</html>

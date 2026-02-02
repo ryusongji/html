@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js복습</title>
+  <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      width: 50%;
+    }
+    tr,td {
+      width: 30%;
+      border: 1px solid black;
+      background-color: beige;
+      
+    }
+  </style>
+</head>
+<body>
+  <h1>js 복습</h1>
+  <h5><script>
+    //1. 사용자에게 이름을 입력받아서 변수에 저장하세요
+    // 2. 사용자에게 점수를 입력받아서 변수에 저장하세요.
+
+
+    // let name = prompt('이름을 입력하세요');
+    // let score =Number(prompt('점수를 입력하세요'));
+
+    // // 3. 점수가 90점 이상이면 참 잘했어요를 출력하세요
+    // //    점수가 80점 이상이면 잘했어요를 출력하세요
+    // //    점수가 80점 미만이면 노력하세요를 출력하세요
+
+    // let gride = "";
+    // if (score >= 90) {
+    //   gride = '참 잘했어요';
+    // } else if (score >= 80) {
+    //   gride = '잘했어요';
+    // } else {
+    //   gride = '노력하세요';
+    // }
+    // document.write(`${name} ${score}점 ${gride}<br>`);
+
+    // // 4. 3번은 if 문으로 작성, 4번은 3번을 switch문으로 작성
+    // switch (parseInt(score/10)) {
+    //   case 10 :
+    //   case 9 : gride = '참 잘했어요'; break;
+    //   case 8 : gride = '잘했어요'; break;
+    //   default : gride = '노력하세요';
+    // }
+    // document.write(`${name} ${score}점 ${gride}<br>`);
+    
+    // // 5. 점수가 홀수인지 짝수인지 구별해서 출력하세요(삼항연산자 이용)
+    // let result = score % 2 == 0 ? '짝수' : '홀수';
+    // document.write(result + `<br>`);
+    // // 6. 점수가 3의 배수인지 아닌지 구별해서 3의 배수이면 점수에 100을 더하고 아니면 점수에 100을 빼주세요. - 알림창
+    // result = score % 3 == 0? score + 100 : score - 100;
+    // document.write(result);
+    
+    // score % 3 == 0 || alert (score-100);
+    // score % 3 == 0 && alert (score+100);
+
+    //i에서 10사이의 두 수를 입력받아서
+    //두 수중에 작은 수는 행, 큰 수는 열로하는 표 작성
+    //표의 데이터는 행과 열을 곱한 값
+    // 표는 문서에 출력
+
+    let input = Number(prompt('수를 입력하세요'));
+    let input2 = Number( prompt('수를 입력하세요'));
+    let row = 0 ;
+    let hag = 0;
+    let layout = '<h1> 표 </h1><table>';
+
+    if (input < input2) {
+      row = input;
+      hag = input2
+    }else if (input2 < input) {
+      row = input2
+      hag = input;
+    }
+
+    console.log(`${row},${hag}`)
+
+    for(i = 1; i <= row; i++) {
+      layout += '<tr>'
+      for(j = 1; j <= hag;j++){
+        layout += `<td>${i*j}</td>`
+
+      }
+      layout += `</tr>`
+    }layout += `</table>`
+    document.write(layout);
+
+
+  </script></h5>
+</body>
+</html>
+
+

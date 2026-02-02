@@ -1,0 +1,242 @@
+<!DOCTYPE html> <!-- 문서 유형 지정 (규칙) -->
+
+<!-- index.html 이건 웹브라우저가 첫번째로 띄우는 웹페이지 (규칙) -->
+
+<html lang="ko"> <!-- 어떤 언어로 작성되어있는지, 홈페이지 구성 언어 정의 (속성)-->
+  <head> <!-- 이 태그안에 쓰이는건 모두 제목 -->
+    <meta charset="utf-8"> <!-- 언어 해석 정의(속성) -->
+    <title> 첫페이지 </title> <!-- 웹사이트 위 탭부분에 뜨는 문서 제목 (어디 페이지) -->
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <style>
+    h1{
+      width: 300px;
+      height: 300px;
+      border: 1px solid #00b469;
+      text-align: center;
+      line-height: 300px; /* 글자 세로 가운데 정렬 */
+      text-shadow: 1px 1px 2px #49c0a2;
+      color: #00ddb8;
+      box-shadow: 0px 1px 10px 5px #00d885 inset;
+      border-radius: 100% 5% 100% 5%;
+      /* border-top-left-radius: 100%; */
+      /* border-top-right-radius: 100%; */
+
+    }
+
+  </style>
+  <body> <!-- 이 태그안에 쓰이는건 모두 화면에 표시되는 글 -->
+    <div id="container">
+
+      <h1> <a href="index.html"><i class="fa-solid fa-house fa-bounce" style="color: #00ff9d;"></i></a>나의 첫페이지 </h1> <!-- 본문 -->
+      <h2> <ruby>學習<rt>학습</rt></ruby> </h2>
+      <h3><abbr title="엉덩이를 뜨겁게">엉뜨</abbr></h3> <!-- abbr 툴팁 : 마우스를 올리면 설명이 나오는 것 -->
+      <h4> H<sub>2</sub>0 </h4> <!-- sub 아래 첨자 -->
+      <h5> y<sup>2</sup> = x <sup>2</sup> + 10</h5> <!-- sup 위첨자 -->
+      
+      <header> <!--header 회사로고, 검색창, 메뉴바 포함 -->
+        <mark> header 회사로고, 검색창, 메뉴바 포함 </mark>
+        <nav> <!-- nav 메뉴바 (웹페이지가 보여줄 내용을 항목별로 묶어둔 곳) -->
+        nav 메뉴바 (웹페이지가 보여줄 내용을 항목별로 묶어둔 곳)
+        <ul id="menu">
+          <li><a href="#list">😁목록 만들기</a></li>
+          <li><a href="#table">✌️표 만들기</a></li>
+          <li><a href="#media">😶‍🌫️멀티미디어</a></li>
+          <li><a href="#link">하이퍼링크</a></li>
+        </ul>
+        </nav>
+      </header>
+      
+      <hr> <!-- hr 수평선 삽입 -->
+      
+      <main> <!-- main 웹페이지가 보여줄 중심 내용(한페이지에 한번만 사용가능) -->
+        main 웹페이지가 보여줄 중심 내용(한페이지에 한번만 사용가능)
+        <section> <!-- section 주제별로 내용을 묶어서 보여주는것(반드시 제목이 필요) -->
+          <article> <!-- article 신문기사 한 꼭지, 독립적으로 떼어내도 떼이낼 수 있는 덩어리 -->
+            <p> <b> <i> article </i> </b> 신문기사 한 꼭지, 독립적으로 떼어내도 떼이낼 수 있는 덩어리</p>
+            <p> p: 문단 편집</p> <!-- p 문단편집 -->
+            <pre> <!-- pre : 웹사이트 코드 소스를 입력된 그대로 표시할 때 사용 -->
+      pre :    웹사이트 코드 소스를 입력된 그대로 표시할 때 사용
+              웹브라우저가 해석하지 않고 입력되는 그대로 표시
+            </pre>
+            <p> <strong> <q><em> Lorem ipsum </em></q> </strong> (의미없는 문자 생성)<br> <!-- br 줄바꿈 -->
+              ipsum dolor sit amet consectetur, adipisicing elit.
+              Odit expedita fuga placeat labore ipsa alias a veniam.
+              <div style="background-color :rgb(235, 179, 179);">Sint, velit voluptatum praesentium est in repellendus ad,</div>
+              <span style="background-color: rgb(187, 187, 252);"><q>perspiciatis</q></span> quasi dicta facere numquam
+            </p> <!-- 여러번 띄어쓰기나 엔터는 실제로 영향이 없음 -->
+            <blockquote cite="www.naver.com"> <!-- 인용문, 저작물 표시-->
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, consectetur!
+            </blockquote>
+          
+          </article>
+        
+        </section>
+        <section>
+          <h3 id="list"> 목록만들기 </h3>
+          <h4> 좋아하는 과일 목록 </h4>
+          <ul class="float"> <!-- 순서가 없는 목록 -->
+            <li> 귤 </li>
+            <li> 바나나 </li>
+            <li class="right"> 사과 </li>
+          </ul>
+          <h4> 코끼리 냉장고에 넣기 </h4>
+          <ol type="I" start="3"> <!-- 순서가 있는 목록 -->
+            <li> 냉장고 문을 열기 </li>
+            <li> 코끼리를 냉장고에 넣는다 </li>
+            <li> 냉장고 문을 닫는다 </li>
+          </ol>
+          <h4> 웹페이지 제작 </h4>
+          <dl>
+            <dt class="accent"> HTML </dt>
+            <dd> 웹페이지의 내용 편집 </dd>
+            <dd> 하이퍼 텍스트 지원 </dd>
+            <dt class="accent"> CSS </dt>
+            <dd> 웹페이지의 디자인을 함 </dd>
+            <dd> 스타일 시트 </dd>
+            <dt class="accent"> JAVASCRIPT </dt>
+            <dd> 사용자의 동작에 반응하는 작업 </dd>
+          </dl>
+        </section>
+        <a href="#menu">TOP</a>
+        <section>
+          <h3 id="table"> 표 만들기 </h3>
+          <table>
+            <caption> 선물용과 가정용 상품 구성 </caption>
+            <colgroup>
+              <col style="background-color:pink;">
+              <col>
+              <col span="2" style="background-color: azure;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th> 용도 </th>
+                <th> 중량 </th>
+                <th> 개수 </th>
+                <th> 가격 </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2"> 선물용 </td>
+                <td> 3kg </td>
+                <td> 11~16과 </td>
+                <td> 35,000원 </td>
+              </tr>
+              <tr>
+                <td> 5kg </td>
+                <td> 18~26과 </td>
+                <td> 52,000원 </td>
+              </tr>
+              <tr>
+                <td rowspan="2"> 가정용 </td>
+                <td> 3kg </td>
+                <td> 11~16과 </td>
+                <td> 30,000원</td>
+              </tr>
+              <tr>
+                <td> 5kg </td>
+                <td> 18~26과 </td>
+                <td> 47,000원 </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4"> 제품 구매 시점에따라 가격이 변동될 수 있습니다 </td>
+              </tr>
+            </tfoot>
+          </table>
+            <br>
+          <table>
+            <caption> 파라다이스 객실 </caption>
+            <colgroup>
+              <col span="4" style="background-color: azure;">
+            </colgroup>
+            <thead>
+              <th style="background-color: pink"> 방이름 </th>
+              <th style="background-color: pink"> 크기 </th>
+              <th style="background-color: pink"> 객실 </th>
+              <th style="background-color: pink"> 가격 </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="background-color: rgb(255, 208, 216);"> 핑크방 </td>
+                <td> 여성 </td>
+                <td rowspan="3" > 4인실 </td>
+                <td rowspan="4"> 1인 20,000원 </td>
+              </tr>
+              <tr>
+                <td rowspan="2" style="background-color: rgb(252, 213, 252)";> 보라방 </td>
+                <td> 동성 </td>
+              </tr>
+              <tr>
+                <td> 가족 1팀 </td>
+              </tr>
+              <tr>
+                <td style="background-color: rgb(67, 224, 67);"> 그린방 </td>
+                <td> - </td>
+                <td> 2인실 </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <td colspan="4" style="background-color: rgb(196, 196, 196);"> <b>바깥채 전체를 렌트합니다</b> </td>
+            </tfoot>
+          </table>
+        </section>
+        <a href="#menu">TOP</a>
+        <section>
+          <h3 id="media"> 이미지 삽입 </h3>
+          <figure>
+          <img src="img/레드향.jpg" alt="레드향" width="200px" height="200px"> <!-- 인라인 레벨태그 -->
+          <img src="img/봄.jpg" alt="봄" width="200px" height="200px">
+          <img src="img/봄.jpg" alt="봄" width="200px" height="200px">
+          <figcaption>상큼한 이미지</figcaption>
+          </figure>
+          <h3> 오디오 삽입 </h3>
+          <audio src="media/미소속에비친그대.mp3" controls></audio>
+          <h3> 비디오 삽입 </h3>
+          <video src="media/사랑한다사랑해.mp4" width="100%" height="300px" controls autoplay muted></video>
+          <h3> 외부파일 삽입 </h3>
+          <object data="media/1. HTML(기본구조텍스트목록표).pdf" width="100%" height="500"></object> <!-- 인라인 레벨태그 -->
+          <embed src="media/1. HTML(기본구조텍스트목록표).pdf" width="100%" height="500"> <!-- 인라인 레벨태그 -->
+          <iframe src="media/1. HTML(기본구조텍스트목록표).pdf" width="100%" height="500"> </iframe>
+          <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/OEA49HUMI3U?si=gbmi87_dordaA3lf"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+        </section>
+        <a href="#menu">TOP</a>
+        <section id="hylink">
+          <h3 id="link"> 하이퍼링크 삽입</h3>
+          <a href="https://www.naver.com" target="_blank">네이버</a>
+          <a href="/수습국원모집.html" target="_blank">
+            <img src="img/봄.jpg" width="100px" height="100px" title="모집광고로 이동">
+          </a>
+          <a href="img/레드향.jpg" download> 파일 다운로드 </a>
+        </section>
+        <a href="#menu">TOP</a>
+      </main>
+      <aside> <!-- 메인 본문과 상관없는 내용이 들어있는 영역, 로그인 창, 광고 -->
+  
+        메인 본문과 상관없는 내용이 들어있는 영역, 로그인 창, 광고
+  
+      </aside>
+      <hr>
+      <footer> <!-- 회사 정보, 개인정보 보호방침, sns 연결 -->
+  
+        회사 정보, 개인정보 보호방침, sns 연결
+      </footer>
+      <div id="top">
+        <a href="#menu">TOP</a>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할일체크</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    ul {
+      display: block;
+      padding: 10px;
+    }
+    li {
+      list-style: none;
+    }
+    li input {
+      width: 250px;
+      padding: 15px;
+    }
+    label {
+      display: inline-block;
+      padding: 10px;
+      font-weight: bold;
+    }
+    button {
+      border-radius: 15px;
+      padding: 15px;
+      margin: 10px;
+      border:1px solid #ccc ;
+    }
+    #todolist {
+      border: 1px solid black;
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+    }
+    #magamlist {
+      border: 1px solid black;
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+    }
+
+    .ative {
+      color: #ccc
+      
+    }
+
+  </style>
+</head>
+<body>
+  
+  <h1>할 일 목록</h1>
+  <hr>
+  <ul>
+    <li>
+      <label for="todo">내가 해야할 일</label>
+      <input type="text" id="todo" name="todo" placeholder="할일 입력">
+      <button id="add">정리하기</button>
+    </li>
+  </ul>
+  <div id="todolist"></div>
+  <div id="magamlist"></div>
+
+  <script>
+    todo = document.querySelector('#todo');
+    todoBtn = document.querySelector('#add');
+    todolist = document.querySelector('#todolist')
+
+    todolists = [];
+
+    todoBtn.addEventListener('click',todoli)
+
+    function todoli() {
+      if(todo == '') {
+        alert('입력이 되지않았습니다.')
+
+      } else if (todolists.indexOf(todo) != -1) {
+        alert('이미 있는 항목입니다.')
+      } else {
+        todolists.push(todo.value);
+        console.log(todolists);
+        todoAdd();
+      }
+    }
+    
+    function todoAdd(){
+      let layout = '';
+      for(let idx in todolists) {
+        layout += `<input type="checkbox" name="check" value="check${idx}" id="check${idx}"><span id="check${idx}">${todolists[idx]}</span><br>`
+      }
+      todolist.innerHTML = layout;
+      magamlist.innerHTML = layout;
+      
+      let checkedbox = document.querySelectorAll("input[name=check]:checked");
+      console.log(checkedbox)
+      let checkedList = document.querySelectorAll("checkedbox");
+      for(let ele of checkedList) {
+        ele.addEventListener('click',checked)
+      }
+
+    }
+    
+    function checked() {
+      let checkedNum = this.getAttribute('id')
+      console.log(checkedNum)
+
+      //console.log(checkedbox)
+      checkedNum.classList.toggle("ative")
+    }
+    
+
+  </script>
+</body>
+</html>

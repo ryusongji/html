@@ -1,0 +1,139 @@
+#container {
+  width: 1000px;
+  margin: 0 auto;
+
+}
+/* 헤더영역 */
+header {
+  background-color: pink;
+  overflow: hidden;
+}
+
+header img {
+  margin: 20px;
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+nav {
+  float: right;
+  width: 500px;
+  padding: 20px;
+}
+
+nav li {
+  float: left;
+  padding:10px;
+  list-style: none;
+}
+
+nav li a:nth-child(2n){
+  background-color: red;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav li:hover a{
+  background-color: beige;
+  border-radius: 20px;
+  color: black;
+  padding: 10px;
+}
+
+nav li a:active { /* 마우스를 누르고 있을 때 */
+  background-color: red;
+}
+
+nav li a:focus { 
+  /* tab 키를 눌렀을 때 */
+  background-color: yellowgreen ;
+  border-radius: 20px;
+  outline: 1px solid #ccc;
+}
+/* nav li:hover a {
+  color: black;
+} */
+/* 메인 영역 */
+main {
+  width: 800px;
+  float: left;
+}
+section h1 {
+  background: url(../img/레드향.jpg) no-repeat left center ;
+  background-size: 46px 46px;
+  padding-left: 50px;
+}
+
+section h1::after {
+  /* h1 뒤에다가 요소를 넣음 */
+  /* 반드시 content가 있어야함 */
+  content: "긴급";
+  font-size: 14px;
+  color: #fff;
+  background-color: red;
+  position: relative;
+  top : -20px;
+  margin-left: 10px;
+}
+
+::selection {
+  /* 마우스를 긁을때 나타나느 것 */
+  background-color: #000;
+  color: #ff0;
+}
+
+
+
+article {
+  width: 368px;
+  height: 230px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  float: left;
+
+}
+
+article p {
+  text-align: justify;
+}
+
+article p::first-line {
+  /* p에 첫줄에 효과 주는 거 */
+  color: red;
+}
+
+article p::first-letter {
+  /* p에 첫알파벳에 효과 주는 거 */
+  font-size: 20px;
+  background-color: yellow;
+}
+
+/* 어사이드 영역 */
+aside {
+  margin-top: 96px;
+  width: 180px;
+  float: right;
+}
+aside img {
+  width: 180px;
+  height: 168px;
+}
+
+/* footer 영역 */
+footer {
+  padding: 10px;
+  background-color: blue;
+  clear: both;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+footer p {
+  margin-top: 0;
+}

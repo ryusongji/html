@@ -1,0 +1,53 @@
+#container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.redhyeng {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+iframe {
+  margin-top: 20px;
+}
+.f_left {
+  float: left;
+  margin: 20px;
+}
+
+.salad {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.f_right {
+  float: right;
+  margin: 20px;
+}
+
+ol li {
+  line-height: 2;
+}
+
+.set {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+table {
+  width: 100%;
+  border: 2px solid gray;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  background-color: beige;
+}

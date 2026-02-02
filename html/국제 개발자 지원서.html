@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국제 개발자 지원서</title>
+  <style>
+    #container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid black;
+    }
+    fieldset {
+      border: none;
+    }
+    
+    .a {
+      width: 100px;
+      display: inline-block;
+    }
+
+    legend {
+      color: blue;
+      font-size: 20px;
+      /* margin-bottom: 20px; */
+      font-weight: bold;
+    }
+
+    li {
+      list-style: none;
+    }
+    input:checked+span {
+      color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>국제 개발자 지원서</h1>
+    <p>html,css,javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다</p>
+    <hr>
+    
+    <form action="지원서.php" method="post" name="지원서">
+      <fieldset>
+        <legend>개인정보</legend>
+        <ul>
+          <li>
+            <label class="a" for="u_name">이름</label>
+            <input type="text" id="u_name" name="u_name" placeholder="공백없이 입력하세요">
+          </li>
+          <li>
+            <label class="a" for="u_nb">연락처</label>
+            <input type="tel" id="u_nb" name="u_nb" placeholder="숫자만 입력하세요">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>지원분야</legend>
+        <!-- <ul>
+          <li class="b">
+            <label> <input type="radio" name="giwon" value="web" checked>웹퍼블리싱</label>
+            <br>
+            <label> <input type="radio" name="giwon" value="app">웹 애플리케이션 개발</label>
+            <br>
+            <label> <input type="radio" name="giwon" value="fi">개발환경 개선</label>
+          </li>
+        </ul> -->
+        <ul>
+          <li><label> <input type="radio" name="giwon" value="web" checked><span>웹퍼블리싱</span></label></li>
+          <li><label> <input type="radio" name="giwon" value="app"><span>웹 애플리케이션 개발</span></label></li>
+          <li><label> <input type="radio" name="giwon" value="fi"><span>개발환경 개선</span></label></li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>지원동기</legend>
+        <ul>
+          <li>
+            <textarea name="motive" id="motive" cols="60" rows="5" placeholder="지원동기를 간략히 써 주세요"></textarea>
+            <br>
+            <button type="submit">전송하기</button>
+            <button type="reset">다시쓰기</button>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+      
+  </div>
+</body>
+</html>

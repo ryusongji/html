@@ -1,0 +1,38 @@
+    #container {
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 3px;
+    }
+    header {
+      background-color: aquamarine;
+      width: 100%;
+    }
+    section {
+      background-color: aqua;
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-around; */
+      justify-content: space-evenly;
+    }
+    section h3 {
+      width: 100%;
+
+    }
+    section p {
+      width: 30%;
+      border: 1px solid #ccc;
+    }
+    aside {
+      background-color: antiquewhite;
+      width: 18%;
+    }
+    footer {
+      background-color: rgb(255, 164, 210);
+      width: 100%;
+    }

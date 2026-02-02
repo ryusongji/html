@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내장객체</title>
+</head>
+<body>
+  <h1>내장객체</h1>
+  <script>
+    //내장 객체 : 미리정의되어있는 객체
+    // 날짜 데이터
+    let today = new Date()
+    console.log(today);
+    let year = today.getFullYear();
+    let month = today.getMonth();
+    let date = today.getDate();
+    let day = today.getDay();
+    switch(day) {
+      case 0 : day = '일요일'; break;
+      case 1 : day = '월요일'; break;
+      case 2 : day = '화요일'; break;
+      case 3 : day = '수요일'; break;
+      case 4 : day = '목요일'; break;
+      case 5 : day = '금요일'; break;
+      case 6 : day = '토요일';
+    }
+    let xmax = new Date ('2026-12-25');
+    let remind = xmax - today;
+    remind = Math.floor(remind/(1000*60*60*24))
+    console.log(`${remind}일 남았어요`)
+
+    //수업시작한지 몇일되었을까요
+    let first = new Date ('2025-12-30');
+    let passday = today - first;
+    passday = Math.floor(passday/(1000*60*60*24))
+    console.log(`${passday}일 지났어요`)
+
+
+    console.log(`${year}년 ${month+1}월 ${date}일 ${day}`);
+    console.log(new Date(1));
+    console.log(today.getTime());
+    console.log(new Date(1769,48,18,68,82,8));
+    console.log(today.toLocaleTimeString());
+
+    //수학객체, 객체를 생성하지 않고 사용
+    let randNum = Math.floor(Math.random() * 81) + 20
+
+    console.log(Math.SQRT2);
+    console.log(Math.sqrt(16));
+
+    //로또
+    // let lotto = '<table>';
+    // for(let i = 0; i<5; i++) {
+    //   lotto += `<tr>`
+    //   for(let j = 0; j<6; j++) {
+    //     let random = Math.floor(Math.random()*45) +1
+    //     //lotto.push(random);
+    //   lotto += `<td>${random}</td>`
+
+    //   }
+    //   lotto += `</tr>`
+        
+    // }
+    // lotto += '</table>';
+
+    // document.write(lotto);
+
+    // let lotto = '';
+    // for(let i = 0; i<5; i++) {
+    //   for(let j = 0; j<6; j++) {
+    //     let random = Math.floor(Math.random()*45) +1
+    //     lotto += `${random}\t`
+    //   }
+    //   lotto += `\n`
+    // }
+    // console.log(lotto);
+
+    let lotto = '';
+    for(let i = 0; i<5; i++) {
+      let count = 0;
+      let lottos = [];
+      while(count<6) {
+        let random = Math.floor(Math.random()*45) +1
+          if (lottos.indexOf(random) == -1) {
+            lottos.push(random);
+            count++;
+          }
+        }
+        lotto += `${lottos}`
+        lotto += `<br>`
+    }document.write(lotto);
+
+    
+    for(let i = 0; i<5; i++) {
+      let count = 0;
+      let lottos = [];
+      while(count<6) {
+        let random = Math.floor(Math.random()*45) +1
+          if (lottos.indexOf(random) == -1) {
+            lottos.push(random);
+            count++;
+          }
+        }
+        console.log(lottos);
+    }
+
+
+  </script>
+</body>
+</html>

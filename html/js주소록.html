@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주소록</title>
+  <style>
+    form {
+      width: 500px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    ul {
+
+      display: inline-block;
+      padding: 0;
+    }
+    li {
+      border-radius: 5px;
+      list-style: none;
+      padding: 5px;
+      margin: 5px;
+    }
+    label {
+      width: 130px;
+      display: inline-block;
+      text-align: center;
+    }
+    input {
+      width: 250px;
+      padding: 3px;
+    }
+    table {
+      margin: 0 auto;
+      width: 300px;
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    tr,th,td {
+      border: 1px solid black;
+
+    }
+    th {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>주소록</h1>
+  <form>
+    <ul>
+      <li>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label for="tel">연락처</label>
+        <input type="tel" id="tel" name="tel" required>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label for="address">주소</label>
+        <input type="text" id="address" name="address" required>
+      </li>
+    </ul>
+    <button type="submit" id="add">주소록</button>
+    <hr>
+  </form>
+  <table id="address1"></table>
+  <script>
+    //form에서 이름, 연락처, 주소 => 입력
+    // 주소록 버튼이 클릭되면 => 입력된 자료 => 베열에 저장 => 표로 작성(문서)
+    // 출력 위치는 폼 아래
+    let name_u = document.querySelector('#name')
+    let tel_u = document.querySelector('#tel')
+    let address_u = document.querySelector('#address')
+    let addBtn = document.querySelector('#add')
+    let address1 = document.querySelector('#address1')
+
+
+    //배열 생성
+    //let address_li = [];
+    let address_lis = []
+    //버튼 이벤트 연결
+    addBtn.addEventListener('click', addAddress)
+
+    function Address (name, tel, address) {
+      this.name = name,
+      this.tel = tel,
+      this.address = address
+    }
+    
+
+    function addAddress(){
+      let address_info = new Address(name_u.value, tel_u.value, address_u.value);
+      address_lis.push(address_info);
+      console.log(address_info);
+      console.log(address_lis);
+      console.log(address_lis[0].name)
+      name_u.value="";
+      tel_u.value="";
+      address_u.value="";
+      name_u.focus();
+      showFunc();
+    }
+
+    function showFunc() {
+
+      let node_table = document.createElement('table');
+      let node_tr = document.createElement('tr');
+      let node_th = document.createElement('th');
+      let node_su = document.createTextNode('순번');
+      let node_th1 = document.createElement('th');
+      let node_name_h = document.createTextNode('이름');
+      let node_th2 = document.createElement('th');
+      let node_tel_h = document.createTextNode('연락처');
+      let node_th3 = document.createElement('th');
+      let node_address_h = document.createTextNode('주소');
+      node_table.appendChild(node_tr);
+      node_tr.appendChild(node_th);
+      node_tr.appendChild(node_th1);
+      node_tr.appendChild(node_th2);
+      node_tr.appendChild(node_th3);
+      node_th.appendChild(node_su);
+      node_th1.appendChild(node_name_h);
+      node_th2.appendChild(node_tel_h);
+      node_th3.appendChild(node_address_h);
+      
+      for(let idx in address_lis) {
+        let node_tr1 = document.createElement('tr');
+        let node_td = document.createElement('td');
+        let node_su = document.createTextNode(Number(idx)+1);
+        let node_td1 = document.createElement('td');
+        let node_name = document.createTextNode(name_u.value);
+        let node_td2 = document.createElement('td');
+        let node_tel = document.createTextNode(tel_u.value);
+        let node_td3 = document.createElement('td');
+        let node_address = document.createTextNode(address_u.value);
+        node_table.appendChild(node_tr1);
+        node_tr1.appendChild(node_td);
+        node_tr1.appendChild(node_td1);
+        node_tr1.appendChild(node_td2);
+        node_tr1.appendChild(node_td3);
+        node_td.appendChild(node_su);
+        node_td1.appendChild(node_name);
+        node_td2.appendChild(node_tel);
+        node_td3.appendChild(node_address);        
+      }
+      address1.innerHTML = '';
+      address1.appendChild(node_table)
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 기초</title>
+</head>
+<body>
+  <h1>자바스크립트 기초 문법</h1>
+  <script>
+    // 출력문
+    // 알림창 출력
+    alert("hello javascript");
+    alert("hello");
+    // 문서 출력
+    // .은 객체 접근 연산자(document:객체, write 함수)
+    document.write("hello javascript");
+    document.write('<h3>hello javascript</h3>');
+    // 콘솔창 출력
+    console.log("hello javascript");
+    // 본인의 나이를 계산해서 알림창으로 출력
+    // 나이는 현재 년도 - 태어난 년도
+    // 나이를 계산해서 저장 -> 변수 선언, 변수 이름
+    let year = 2026
+    let birthday = 2001
+    let age = year - birthday;
+    // 알림창에 출력
+    alert("내 나이는" + " " + age);
+    // 입력문
+    let name = prompt("이름을 입력하세요");
+    console.log(name);
+    // 숫자 하나를 입력 받아서 100을 더해서 출력 하세요
+    let num =prompt("숫자 하나를 입력해주세요");
+    let result = Number(num) + 100;
+    console.log(result);
+    // 확인창
+    let check = confirm("수락하시겠습니까?");
+    document.write(check);
+  </script>
+</body>
+</html>

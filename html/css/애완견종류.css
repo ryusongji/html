@@ -1,0 +1,134 @@
+#container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* 헤더영역 */
+header {
+  background-color: rgb(52, 52, 110);
+  overflow: hidden;
+}
+/* header img {
+  margin: 20px;
+  width: 80px;
+  height: 80px;
+  float: left;
+} */
+main {
+  border: 5px solid rgb(123, 123, 248);
+}
+nav {
+  float: right;
+  /* width: 500px; */
+  /* height: 20px; */
+}
+nav li {
+  float: left;
+  padding-right: 30px;
+  list-style: none;
+  padding: 30px;
+  margin-bottom: 10px;
+}
+
+
+nav li:nth-child(2n){
+  background-color: red;
+}
+
+
+nav li:nth-child(2n+1){
+  background-color: magenta;
+}
+
+nav li:first-child{
+  box-shadow: 3px 3px 3px white;
+}
+
+nav li:last-child{
+  box-shadow: 5px 5px 5px white;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section ul {
+  text-align: center;
+  background-color: beige;
+
+}
+
+section li {
+  /* float: left; */
+  display: inline;
+  list-style: none;
+  padding: 50px;
+  
+}
+section a{
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+section a:hover {
+  color: blue;
+}
+
+section:has(a:hover) a:not(:hover) { 
+  /*a에 마우스를 올렸을 때 마우스를 안 올린 것들에게 주는거 */
+  opacity: 0.5;
+  color: gray;
+}
+
+#d1:target , #d2:target, #d3:target{
+  background-color: aqua;
+
+}
+section article{
+  border : 1px dotted pink;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 10px;
+}
+section article h2{
+  padding-left: 10px;
+}
+
+section figure img {
+  width: 200px;
+  padding-right: 10px;
+}
+figure {
+  text-align: center;
+}
+.top {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  background: red;
+  border-radius: 100%;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  line-height: 100px;
+}
+.top a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+#last {
+  background: pink;
+  padding: 10px;
+  margin: 10px;
+}
+
+footer {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문2</title>
+</head>
+<body>
+  <h1>반복문2</h1>
+  <script>
+    //while 반복문 : 횟수보다 조건 체크해서 반복할 때 사용
+    //while (조건)(실행문)
+    //1부터 10까지 합 구하기
+    //합이 20을 넘는 순간의 su와 sum을 출력
+    // let su = 1;
+    // let sum = 1;
+    // while (true) {
+    //   su++;
+    //   sum += su;
+    //   console.log(`${su} -> ${sum}`);
+    //   //if (sum > 20) break;
+    // }
+    // console.log(`마지막 수 = ${su} -- ${sum}`);
+
+    //do ~ while()
+    //무조건 1번 실행 -> 조건 체크
+    //5~10까지의 짝수 합
+    // su = 5;
+    // sum = 0;
+    // do{
+    //   if(su%2==0) sum += su;
+    //   console.log(`${su} -> ${sum}`);
+    //   su++;
+    // }while(su <= 10);
+
+    // 숫자 맞추기
+    // 무작위 수 발생(난수) - 1에서 50까지 수
+    // 수학 개체 : parseInt(Math.random()*50)+1
+    // 수입력 받아요(prompt)
+    // 비교 - 난수 > 입력값 => up 하세요
+    // 비교 - 난수 < 입력값 => down 하세요
+    // 비교 - 난수 = 입력값 => 축하합니다 정답입니다
+
+    let com = parseInt(Math.random()*50)+1;
+    console.log(com);
+    let count = 0;
+    while(true) {
+      let su = prompt('수를 입력하세요');
+      if (com > su) {
+        alert(`up하세요`);
+      }else if(com < su) {
+        alert(`down 하세요`);
+      }else {
+        alert(`정답, ${count}번만에 성공하셨습니다.`);
+        break;
+      }
+      count++
+      if(count >= 10) {
+        alert(`실패`);
+        break;
+      }
+    }
+  
+
+  </script>
+</body>
+</html>

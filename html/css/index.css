@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Gugi&display=swap');
+
+
+      
+      body {
+        background-color : rgb(218, 218, 218);
+      }
+      header {
+        background-color : aliceblue;
+      }
+
+      .accent {
+        color: #00f;
+      }
+
+      #menu {
+        font-family: "Chiron GoRound TC", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      nav li {
+        background-color: burlywood;
+        margin-bottom: 5px;
+        display: inline-block;
+        padding: 10px;
+        margin: 50px 30px;
+        width: 105px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 20px;
+      }
+
+      a {
+        text-decoration: none; /* 하이퍼링크 줄 없애기 */
+        color: white;
+      }
+      main {
+        background-color : yellow;
+        padding: 10px; /* 안여백*/
+        font-family: "Chiron GoRound TC", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+      }
+      main .float{
+        background-color: aquamarine;
+        padding: 10px;
+        overflow: hidden;
+        text-align: center;
+        /* 자신의 크기가 있을 때 넘친 자식은 보여주지않음 */
+        /*자식이 float 넘쳤을 때 영역 인정, 단 크기가 정해지지않았을 때*/
+      }
+      main .float li {
+        float: left;
+        list-style: none;
+        padding: 5px 40px;
+        /* margin: 5px 40px; */
+        border: 1px solid black;
+        
+      }
+      main .float li:hover {
+        /* 롤 오버 효과 즉, 마우스를 올리면 */
+        background-color: blue;
+        color: aliceblue;
+        border-radius: 20px;
+      }
+      main ol li:hover {
+        float: left;
+        overflow: hidden;
+        background-color: pink;
+        border-radius: 100% ;
+        padding: 10%;
+        font-size: 50px;
+        border-style:double pupp;
+      }
+
+      main .float .right {
+        float: right;
+      }
+      main ol{
+        list-style-position: inside;
+        text-align: center;
+      }
+      figure img {
+        display: block;
+        border-radius: 10px;
+      }
+      table{
+        width: 70%;
+        border: 2px solid gray;
+        border-collapse: collapse; /* 테두리합치기*/
+        text-align: center;
+      }
+      th, td{
+        border: 1px solid gray;
+        padding: 5px;
+      }
+      thead, tfoot {
+        background-color: beige;
+      }
+
+      #hylink {
+        border: 2px solid #aaa;
+        padding: 10px;
+        text-align: center;
+      }
+
+      #hylink h3 {
+        text-align: left;
+        
+      }
+
+      #hylink a {
+        margin: 10px 40px;
+        color: black;
+        display: inline-block;
+      }
+      aside {
+        background-color: greenyellow;
+      }
+      footer{
+        background-color: blue;
+        color : white;
+        font-family: "Chiron GoRound TC", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+      }
+      #container{ /* 화면 가운데 배치 */
+        width: 800px;
+        margin: 0 auto;
+        border: 2px solid #00f;
+        padding: 20px;
+      }
+      #top {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+        position: fixed;
+        right: 20px;
+        bottom: 30px;
+      }
